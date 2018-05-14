@@ -1,0 +1,17 @@
+version: '3.0'
+services:
+    lab:
+        image: sbt/append-csv:latest
+        networks:
+            - traefik_public
+        deploy:
+            replicas: 1
+            labels:
+                - traefik.port=3000
+                - traefik.frontend.rule=Host:append-csv.sbtinstruments.com
+                - traefik.docker.network=traefik_public
+    
+networks:
+    traefik_public:
+        external: true
+

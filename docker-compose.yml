@@ -1,6 +1,6 @@
 version: '3.0'
 services:
-    lab:
+    append-csv:
         image: sbt/append-csv:latest
         networks:
             - traefik_public
